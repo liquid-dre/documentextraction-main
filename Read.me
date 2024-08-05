@@ -39,11 +39,23 @@ pip uninstall -r requirements.txt This helps to uninstall packages one by one.
 
 pip uninstall -r requirements.txt -y This helps to delete all the packages at once.
 
+Dockerization
 
-Dockerize
+To containerize the application using Docker:
+
+Dockerize the Application
+Follow this guide: Practicing Django with Docker on VS Code : 
 https://adeniyekehinde0.medium.com/practicing-django-with-docker-on-vscode-7cb179bd241e
 
-Vercel Deployment
+Build the Docker Image
+docker build -t documentextraction-main .
+
+Potential issues with package installation
+# Install problematic package separately
+RUN pip install --no-cache-dir pillow_heif
+
+Run the Docker Container
+docker run -p 8001:8000 documentextraction-main
 
  References
  https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/pdf/
