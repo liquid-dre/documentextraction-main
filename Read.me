@@ -1,0 +1,73 @@
+You need virtual environment to isolate dependencies
+https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/
+
+Create virtual environment
+python3 -m venv . venv
+
+Starting virtual environment MacOS /Linux
+. .venv/bin/activate
+
+For windows use
+venv\Scripts\activate
+
+Migrations for database models and tables
+
+python manage.py makemigrations multimodal
+python migrate.py migrate
+
+Create superuser for your database 
+python manage.py createsuperuser
+e.g admin 1234
+User will be used to manage Django admin
+
+Running server
+python manage.py runserver
+
+Sidenotes
+On intepreter make sure virtual environment is selecteed
+To change press command shift P and select interpreter
+
+
+Dependencies
+run pip freeze > requirements.txt to create dependencies and their versions
+
+Install dependencies by running 
+pip install -r requirements.txt
+
+Remove dependencies
+pip uninstall -r requirements.txt This helps to uninstall packages one by one.
+
+pip uninstall -r requirements.txt -y This helps to delete all the packages at once.
+
+
+Dockerize
+https://adeniyekehinde0.medium.com/practicing-django-with-docker-on-vscode-7cb179bd241e
+
+Vercel Deployment
+
+ References
+ https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/pdf/
+ https://github.com/langchain-ai/langchain/issues/16315
+
+
+ Understanding Multimodal RAG
+ - Multimodal Rag integrates various modalitiess such as text, images and documents into retrieval and genation processes.
+ - This allows conversational agents to comprehend and generate responses based not only on text input but also accompanying visual and contextual information
+
+ Steps
+
+1. Extract text, tables, and images from PDF files using partitioning techniques and document structure analysis.
+2. Categorize extracted elements into text and tables based on their type.
+3. Generate summaries for text elements using an OpenAI model, optionally splitting long texts into manageable chunks.
+4. Encode images as base64 strings and summarize them using an OpenAI Vision model.
+5. Create a multi-vector retriever to index summaries and raw contents of text, tables, and images.
+6. Initialize a vector store using the Chroma vector store with OpenAI embeddings.
+7. Construct a multi-modal RAG chain for processing user questions with both textual and visual context.
+8. Retrieve relevant documents based on a user query using the multi-vector retriever.
+9. Invoke the multi-modal RAG chain to generate a response to the user query.
+
+Chunking strategies
+https://docs.unstructured.io/api-reference/api-services/chunking
+
+Chunking best strategies
+https://unstructured.io/blog/chunking-for-rag-best-practices

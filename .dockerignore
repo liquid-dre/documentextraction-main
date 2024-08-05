@@ -1,0 +1,10 @@
+# Ignore the following files and directories
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.DS_Store
+*.env
